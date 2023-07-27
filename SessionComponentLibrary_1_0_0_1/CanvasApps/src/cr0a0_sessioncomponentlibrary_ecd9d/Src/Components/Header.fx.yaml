@@ -1,0 +1,68 @@
+Header As CanvasComponent:
+    InterpolateString(Tags As Table, Text2Interpolate As String):
+        Tags:
+            Default: |-
+                =[
+                    {
+                        Tag: "#CompanyName#",
+                        Value: "South Coast User Group"
+                    }
+                ]
+        Text2Interpolate:
+            Default: |-
+                ="Hello #CompanyName#"
+        ThisProperty:
+            Default: |-
+                =Concat(
+                    ForAll(
+                        MatchAll(
+                            Text2Interpolate, //Get all matches on our RegEx
+                            "(<[^>]+>|#\S+#|\S+(?:\s|$)|[.!,]\s*|\s)") As Elements,
+                        Coalesce(               //Coalesce will either replace the tag if
+                                                //it's found, or just insert the text we're evaluating
+                        LookUp(
+                                Tags,
+                                ThisRecord.Tag = Elements.FullMatch
+                            ).Value,
+                            Elements.FullMatch
+                        )
+                    ),
+                    ThisRecord.Value       //Finally let's concat the resulting table from the ForAll statement, 
+                                            //without any seperators
+                )  //Output as Text)
+    Fill: =Header.Properties.Colours.BackgroundColour
+    HeadingText: =App.ActiveScreen.Name
+    Height: =64
+    Properties: |-
+        ={
+            Colours:
+            {
+                PrimaryColour: ColorValue("#111111"),
+                SecondaryColour: ColorValue("#555555"),
+                BackgroundColour: Color.Orange
+            },
+            Font:
+            {
+                'Font-Family': Font.'Dancing Script',
+                Sizes:
+                {
+                    Heading: 21,
+                    Action: 12,
+                    Text: 13
+                }
+            }
+        }
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Label1 As label:
+        Color: =Header.Properties.Colours.PrimaryColour
+        Font: =Header.Properties.Font.'Font-Family'
+        Height: =64
+        Size: =Header.Properties.Font.Sizes.Heading
+        Text: =Header.HeadingText
+        Width: =640
+        ZIndex: =1
+

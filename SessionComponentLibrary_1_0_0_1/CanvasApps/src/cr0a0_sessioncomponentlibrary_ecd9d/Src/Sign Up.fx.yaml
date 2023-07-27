@@ -1,0 +1,103 @@
+"'Sign Up' As screen":
+    OnVisible: |-
+        =Set(
+            Theme,
+            {
+            Colours:
+            {
+                PrimaryColour: ColorValue("#111111"),
+                SecondaryColour: ColorValue("#555555"),
+                BackgroundColour: Color.Aqua
+            },
+            Font:
+            {
+                'Font-Family': Font.Arial,
+                Sizes:
+                {
+                    Heading: 21,
+                    Action: 12,
+                    Text: 13
+                }
+            }
+        });
+        
+        Set(
+            Toolbar,
+            [
+            {
+                Title: "Sign Up",
+                Icon: Icon.Add,
+                TargetScreen: 'Sign Up'
+            },
+            {
+                Title: "About Us",
+                Icon: Icon.Add,
+                TargetScreen: 'About Us'
+            }
+        ])
+
+    Container1 As groupContainer.verticalAutoLayoutContainer:
+        Height: =App.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =10
+        LayoutMode: =LayoutMode.Auto
+        Width: =App.Width
+        ZIndex: =1
+
+        Header_1 As Header:
+            AlignInContainer: =AlignInContainer.Center
+            Fill: =Header_1.Properties.Colours.BackgroundColour
+            InterpolateString: |-
+                =Concat(
+                    ForAll(
+                        MatchAll(
+                            Text2Interpolate, //Get all matches on our RegEx
+                            "(<[^>]+>|#\S+#|\S+(?:\s|$)|[.!,]\s*|\s)") As Elements,
+                        Coalesce(               //Coalesce will either replace the tag if
+                                                //it's found, or just insert the text we're evaluating
+                        LookUp(
+                                Tags,
+                                ThisRecord.Tag = Elements.FullMatch
+                            ).Value,
+                            Elements.FullMatch
+                        )
+                    ),
+                    ThisRecord.Value       //Finally let's concat the resulting table from the ForAll statement, 
+                                            //without any seperators
+                )  //Output as Text)
+            LayoutMinHeight: =640
+            Properties: =Theme
+
+        Toolbar_1 As Toolbar:
+            Items: =Toolbar
+            LayoutMinHeight: =640
+            OnSelect: =Navigate(SelectedRecord.TargetScreen)
+            Properties: =Theme
+            ZIndex: =2
+
+        SimpleForm_1 As SimpleForm:
+            ConvertDataToJSONString: |-
+                =
+                    Concatenate(
+                        "{",
+                        Concat(
+                            TableData,
+                            $"""{ThisRecord.FieldName}"": ""{ThisRecord.Value}""",","),"}")
+            Height: =320
+            Properties: =Theme
+            ResetForm: =Reset(Gallery2)
+            ReturnFieldValue: =LookUp(Gallery2.AllItems, ThisRecord.FieldName = ReqFieldName).TextInput2.Text
+            ZIndex: =3
+
+        Button3 As button:
+            AlignInContainer: =AlignInContainer.Center
+            Height: =70
+            LayoutMinHeight: =70
+            LayoutMinWidth: =280
+            OnSelect: =Notify("Thanks for Signing Up!");Reset(SimpleForm_1)
+            Size: =24
+            Text: ="Sign Up"
+            Width: =280
+            ZIndex: =4
+

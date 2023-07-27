@@ -1,0 +1,94 @@
+"'About Us' As screen":
+
+    Container1_1 As groupContainer.verticalAutoLayoutContainer:
+        Height: =App.Height
+        LayoutAlignItems: =LayoutAlignItems.Stretch
+        LayoutDirection: =LayoutDirection.Vertical
+        LayoutGap: =10
+        LayoutMode: =LayoutMode.Auto
+        Width: =App.Width
+        ZIndex: =1
+
+        Header_2 As Header:
+            AlignInContainer: =AlignInContainer.Center
+            Fill: =Header_2.Properties.Colours.BackgroundColour
+            InterpolateString: |-
+                =Concat(
+                    ForAll(
+                        MatchAll(
+                            Text2Interpolate, //Get all matches on our RegEx
+                            "(<[^>]+>|#\S+#|\S+(?:\s|$)|[.!,]\s*|\s)") As Elements,
+                        Coalesce(               //Coalesce will either replace the tag if
+                                                //it's found, or just insert the text we're evaluating
+                        LookUp(
+                                Tags,
+                                ThisRecord.Tag = Elements.FullMatch
+                            ).Value,
+                            Elements.FullMatch
+                        )
+                    ),
+                    ThisRecord.Value       //Finally let's concat the resulting table from the ForAll statement, 
+                                            //without any seperators
+                )  //Output as Text)
+            LayoutMinHeight: =640
+            Properties: =Theme
+
+        Toolbar_2 As Toolbar:
+            Items: =Toolbar
+            LayoutMinHeight: =640
+            OnSelect: =Navigate(SelectedRecord.TargetScreen)
+            Properties: =Theme
+            ZIndex: =2
+
+        HtmlText1 As htmlViewer:
+            Height: =500
+            HtmlText: |-
+                =Header_1.InterpolateString(ForAll(SimpleForm_2.OutputData, {Tag: ThisRecord.FieldName, Value: ThisRecord.Value}),
+                    "<b>What we're about</b><br><br>
+                <b>Welcome to the Microsoft Cloud #CompanyName#!</b><br>
+                This #EventType# is for anyone interested in Microsoft 365 and Azure; we focus on all three clouds of the Microsoft platform: Business Applications, Modern Workplace and Azure.<br><br>
+                
+                The #EventType# is a free to attend event, hosted at the Ageas Bowl, Southampton on the first Tuesday of each month, kicking off at #StartTime#.<br><br>
+                
+                Unlike other #EventType#s (who typically focus on a single area); the #CompanyName# rotates its focus quarterly, covering - Biz Apps, Azure and Modern Workplace.<br><br>
+                
+                We typically have 2-3 sessions per meetup, with each session lasting between 20-40 minutes. Anyone is welcome to submit a session - all sessions will be scheduled (no approval or review process).<br><br>
+                
+                The #CompanyName# is proudly supported by Microsoft, Mexa Recruitment CPS. These sponsors help support the cost of venue hire and providing food and drink for all attendees ( #Refreshments#! ). There's usually some SWAG being handed out too!<br><br>
+                
+                Registration, event dates, and the agenda are published via our Meetup page. Alternatively, if you follow our LinkedIn or Twitter channels – you’ll see regular updates and announcements.<br><br>
+                
+                The group is hosted by the community, for the community.")
+            LayoutMinHeight: =70
+            LayoutMinWidth: =560
+            Size: =13
+            Width: =560
+            ZIndex: =3
+
+        SimpleForm_2 As SimpleForm:
+            ConvertDataToJSONString: |-
+                =
+                    Concatenate(
+                        "{",
+                        Concat(
+                            TableData,
+                            $"""{ThisRecord.FieldName}"": ""{ThisRecord.Value}""",","),"}")
+            Fields: |-
+                =[
+                    {
+                        FieldName: "#CompanyName#"
+                    },
+                    {
+                        FieldName: "#EventType#"
+                    },
+                    {
+                        FieldName: "#Refreshments#"
+                    },
+                    {
+                        FieldName: "#StartTime#"
+                    }]
+            Properties: =Theme
+            ResetForm: =Reset(Gallery2)
+            ReturnFieldValue: =LookUp(Gallery2.AllItems, ThisRecord.FieldName = ReqFieldName).TextInput2.Text
+            ZIndex: =4
+

@@ -1,0 +1,108 @@
+SimpleForm As CanvasComponent:
+    ConvertDataToJSONString(TableData As Table):
+        TableData:
+            Default: |-
+                =[
+                    {
+                    
+                    FieldName: "",
+                    Value: ""
+                    }]
+        ThisProperty:
+            Default: |-
+                =
+                    Concatenate(
+                        "{",
+                        Concat(
+                            TableData,
+                            $"""{ThisRecord.FieldName}"": ""{ThisRecord.Value}""",","),"}")
+    ResetForm():
+        ThisProperty:
+            Default: =Reset(Gallery2)
+    ReturnFieldValue(ReqFieldName As String):
+        ReqFieldName:
+            Default: ="Text"
+        ThisProperty:
+            Default: =LookUp(Gallery2.AllItems, ThisRecord.FieldName = ReqFieldName).TextInput2.Text
+    Fields: |
+        =[
+            {
+                FieldName: "First Name",
+                Type: "Text",
+                Default: ""
+            },
+            {
+                FieldName: "Surname",
+                Type: "Text",
+                Default: ""
+            },
+            {
+                FieldName: "Email",
+                Type: "Text",
+                Validation: "Email",
+                Default: User().Email
+            }
+        ]
+    Fill: =RGBA(0, 0, 0, 0)
+    Height: =640
+    OutputData: |
+        =ForAll(Gallery2.AllItems,
+        {
+            FieldName: ThisRecord.FieldName,
+            Value: ThisRecord.TextInput2.Text})
+    Properties: |-
+        ={
+            Colours:
+            {
+                PrimaryColour: ColorValue("#111111"),
+                SecondaryColour: ColorValue("#555555"),
+                BackgroundColour: Color.Orange
+            },
+            Font:
+            {
+                'Font-Family': Font.'Dancing Script',
+                Sizes:
+                {
+                    Heading: 21,
+                    Action: 12,
+                    Text: 13
+                }
+            }
+        }
+    Width: =640
+    X: =0
+    Y: =0
+    ZIndex: =1
+
+    Gallery2 As gallery.galleryVertical:
+        DelayItemLoading: =true
+        Height: =Parent.Height
+        Items: =SimpleForm.Fields
+        Layout: =Layout.Vertical
+        LoadingSpinner: =LoadingSpinner.Data
+        TemplateSize: =100
+        Width: =Parent.Width
+        ZIndex: =1
+
+        Label3 As label:
+            Font: =SimpleForm.Properties.Font.'Font-Family'
+            Height: =35
+            OnSelect: =Select(Parent)
+            Size: =SimpleForm.Properties.Font.Sizes.Action
+            Text: =ThisItem.FieldName
+            Width: =560
+            ZIndex: =1
+
+        TextInput2 As text:
+            BorderColor: =SimpleForm.Properties.Colours.SecondaryColour
+            Default: =ThisItem.Default
+            Font: =SimpleForm.Properties.Font.'Font-Family'
+            Height: =35
+            OnChange: =
+            OnSelect: =Select(Parent)
+            Size: =SimpleForm.Properties.Font.Sizes.Action
+            Width: =(Parent.TemplateWidth - (Self.X * 2) - 20)
+            X: =40
+            Y: =Parent.TemplateHeight /2  - Self.Height /2
+            ZIndex: =2
+

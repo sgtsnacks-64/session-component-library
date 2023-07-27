@@ -1,0 +1,174 @@
+{
+  "ComponentIndexes": {
+    "Header": 2,
+    "Header_1": 1,
+    "Header_2": 1,
+    "SimpleForm": 4,
+    "SimpleForm_1": 3,
+    "SimpleForm_2": 4,
+    "String Interpolator": 5,
+    "Toolbar": 3,
+    "Toolbar_1": 2,
+    "Toolbar_2": 2
+  },
+  "ControlUniqueGuids": {},
+  "ControlUniqueIds": {
+    "About Us": 35,
+    "App": 1,
+    "Button3": 62,
+    "Container1": 14,
+    "Container1_1": 46,
+    "Gallery1": 9,
+    "Gallery2": 18,
+    "galleryTemplate1": 10,
+    "galleryTemplate2": 19,
+    "Header": 5,
+    "Header_1": 15,
+    "Header_2": 47,
+    "Host": 3,
+    "HtmlText1": 52,
+    "Icon1": 11,
+    "Label1": 6,
+    "Label2": 12,
+    "Label3": 20,
+    "Rectangle1": 13,
+    "Sign Up": 4,
+    "SimpleForm": 17,
+    "SimpleForm_1": 26,
+    "SimpleForm_2": 61,
+    "String Interpolator": 50,
+    "TextInput2": 24,
+    "Toolbar": 8,
+    "Toolbar_1": 16,
+    "Toolbar_2": 48
+  },
+  "FunctionParamsInvariantScripts": {
+    "Toolbar.OnSelect_SelectedRecord": [
+      "{\r\n        Title: \"Example Title\",\r\n        Icon: Icon.Add,\r\n        TargetScreen: App.ActiveScreen\r\n    }",
+      "{\r\n        Title: \"Example Title\",\r\n        Icon: Icon.Add,\r\n        TargetScreen: App.ActiveScreen\r\n}"
+    ]
+  },
+  "FunctionParamsInvariantScriptsOnInstances": {
+    "Toolbar_1.OnSelect_SelectedRecord": [
+      "{\r\n        Title: \"Example Title\",\r\n        Icon: Icon.Add,\r\n        TargetScreen: App.ActiveScreen\r\n    }",
+      "{\r\n        Title: \"Example Title\",\r\n        Icon: Icon.Add,\r\n        TargetScreen: App.ActiveScreen\r\n}"
+    ],
+    "Toolbar_2.OnSelect_SelectedRecord": [
+      "{\r\n        Title: \"Example Title\",\r\n        Icon: Icon.Add,\r\n        TargetScreen: App.ActiveScreen\r\n    }",
+      "{\r\n        Title: \"Example Title\",\r\n        Icon: Icon.Add,\r\n        TargetScreen: App.ActiveScreen\r\n}"
+    ]
+  },
+  "HeaderLastSavedDateTimeUTC": "07/27/2023 23:01:42",
+  "IsLegacyComponentAllowGlobalScopeCase": false,
+  "LocalConnectionIDReferences": {},
+  "LocalDatabaseReferencesAsEmpty": false,
+  "LocalResourceFileNames": {},
+  "LocalResourceRootPaths": {},
+  "OrderComponentMetadata": {
+    "5e78c765494242439de189881b40871f": 2,
+    "70f27949ceff443e9589cd1ff68e67fd": 0,
+    "7d3bb0afe86943e78b5371506113f696": 1,
+    "f75da8f7ece94165aa8bb440af25e6d7": 3
+  },
+  "OrderComponentTemplate": {
+    "5e78c765494242439de189881b40871f": 2,
+    "70f27949ceff443e9589cd1ff68e67fd": 0,
+    "7d3bb0afe86943e78b5371506113f696": 1,
+    "f75da8f7ece94165aa8bb440af25e6d7": 3
+  },
+  "OrderDataSource": {
+    "CustomGallerySample": 0
+  },
+  "OrderGroupControls": {},
+  "OrderPcfTemplate": {},
+  "OrderTemplate": {},
+  "OrderXMLTemplate": {
+    "button": 6,
+    "gallery": 2,
+    "groupContainer": 0,
+    "htmlViewer": 7,
+    "icon": 4,
+    "label": 1,
+    "rectangle": 3,
+    "text": 5
+  },
+  "OverridablePropertiesEntry": {
+    "About Us": {},
+    "App": {},
+    "Button3": {},
+    "Container1": {},
+    "Container1_1": {},
+    "Gallery1": {},
+    "Gallery2": {},
+    "galleryTemplate1": {},
+    "galleryTemplate2": {},
+    "Header": {},
+    "Header_1": {},
+    "Header_2": {},
+    "Host": {},
+    "HtmlText1": {},
+    "Icon1": {},
+    "Label1": {},
+    "Label2": {},
+    "Label3": {},
+    "Rectangle1": {},
+    "Sign Up": {},
+    "SimpleForm": {},
+    "SimpleForm_1": {},
+    "SimpleForm_2": {},
+    "String Interpolator": {},
+    "TextInput2": {},
+    "Toolbar": {},
+    "Toolbar_1": {},
+    "Toolbar_2": {}
+  },
+  "PCFDynamicSchemaForIRRetrievalEntry": {},
+  "PCFTemplateEntry": {},
+  "PublishOrderIndices": {
+    "About Us": 0,
+    "App": 0,
+    "Button3": 4,
+    "Container1": 0,
+    "Container1_1": 5,
+    "Gallery1": 11,
+    "Gallery2": 16,
+    "galleryTemplate1": 12,
+    "galleryTemplate2": 17,
+    "Header": 0,
+    "Header_1": 1,
+    "Header_2": 6,
+    "Host": 0,
+    "HtmlText1": 8,
+    "Icon1": 14,
+    "Label1": 10,
+    "Label2": 15,
+    "Label3": 18,
+    "Rectangle1": 13,
+    "Sign Up": 0,
+    "SimpleForm": 0,
+    "SimpleForm_1": 3,
+    "SimpleForm_2": 9,
+    "String Interpolator": 0,
+    "TextInput2": 19,
+    "Toolbar": 0,
+    "Toolbar_1": 2,
+    "Toolbar_2": 7
+  },
+  "ResourcesJsonIndices": {
+    "Image-SampleImage": 0
+  },
+  "RuleScreenIdWithoutScreen": {},
+  "TemplateVersions": {},
+  "VolatileProperties": {
+    "AnalysisLoadTime": 0.030311299999999999,
+    "ControlCount": {
+      "5e78c765494242439de189881b40871f": 3,
+      "70f27949ceff443e9589cd1ff68e67fd": 3,
+      "7d3bb0afe86943e78b5371506113f696": 2,
+      "button": 2,
+      "groupContainer": 1,
+      "text": 3
+    }
+  },
+  "WasLocalDatabaseReferencesEmpty": true
+}

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CanvasApp xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Name>cr0a0_sessioncomponentlibrary_ecd9d</Name>
+  <AppVersion>2023-07-27T23:01:44Z</AppVersion>
+  <Status>Ready</Status>
+  <CreatedByClientVersion>3.23073.23.0</CreatedByClientVersion>
+  <MinClientVersion>3.23073.23.0</MinClientVersion>
+  <Tags>{"primaryDeviceWidth":"640","primaryDeviceHeight":"1136","supportsPortrait":"true","supportsLandscape":"true","primaryFormFactor":"Phone","publisherVersion":"3.23073.23","minimumRequiredApiVersion":"2.2.0","hasComponent":"true","hasUnlockedComponent":"true","isUnifiedRootApp":"false"}</Tags>
+  <IsCdsUpgraded>0</IsCdsUpgraded>
+  <GalleryItemId xsi:nil="true"></GalleryItemId>
+  <BackgroundColor>RGBA(251,101,60,1)</BackgroundColor>
+  <DisplayName>Session Component Library</DisplayName>
+  <Description xsi:nil="true"></Description>
+  <CommitMessage xsi:nil="true"></CommitMessage>
+  <Publisher xsi:nil="true"></Publisher>
+  <AuthorizationReferences>[]</AuthorizationReferences>
+  <ConnectionReferences>{}</ConnectionReferences>
+  <DatabaseReferences>{}</DatabaseReferences>
+  <AppComponents>[{"appComponentName":"70f27949ceff443e9589cd1ff68e67fd","displayName":"Header","appName":"abdfdff6-dba6-4d8e-9542-8e9793d2a855","appVersion":"2023-07-27T23:01:44Z","appComponentLibraryLogicalName":"cr0a0_sessioncomponentlibrary_ecd9d","appDisplayName":"Session Component Library","environmentName":"e4cbc6a6-6c14-4d80-a567-20caf1cc8ea0","owner":{"id":"f021e284-d466-4af7-85b8-abcee566a50d","displayName":"Mike Gowland","email":"admin-global@mgowlanddev.onmicrosoft.com","type":"User","tenantId":"f44173b3-932c-4c8f-93ce-6daf8457c0b0","userPrincipalName":"admin-global@mgowlanddev.onmicrosoft.com"},"allowCustomization":true,"createdOn":"2023-07-27T23:01:41.553Z","lastModifiedOn":"2023-07-27T23:01:41.553Z","connectionReferences":{},"databaseReferences":{}},{"appComponentName":"7d3bb0afe86943e78b5371506113f696","displayName":"Toolbar","appName":"abdfdff6-dba6-4d8e-9542-8e9793d2a855","appVersion":"2023-07-27T23:01:44Z","appComponentLibraryLogicalName":"cr0a0_sessioncomponentlibrary_ecd9d","appDisplayName":"Session Component Library","environmentName":"e4cbc6a6-6c14-4d80-a567-20caf1cc8ea0","owner":{"id":"f021e284-d466-4af7-85b8-abcee566a50d","displayName":"Mike Gowland","email":"admin-global@mgowlanddev.onmicrosoft.com","type":"User","tenantId":"f44173b3-932c-4c8f-93ce-6daf8457c0b0","userPrincipalName":"admin-global@mgowlanddev.onmicrosoft.com"},"allowCustomization":true,"createdOn":"2023-07-27T23:01:41.553Z","lastModifiedOn":"2023-07-27T23:01:41.553Z","connectionReferences":{},"databaseReferences":{}},{"appComponentName":"5e78c765494242439de189881b40871f","displayName":"SimpleForm","appName":"abdfdff6-dba6-4d8e-9542-8e9793d2a855","appVersion":"2023-07-27T23:01:44Z","appComponentLibraryLogicalName":"cr0a0_sessioncomponentlibrary_ecd9d","appDisplayName":"Session Component Library","environmentName":"e4cbc6a6-6c14-4d80-a567-20caf1cc8ea0","owner":{"id":"f021e284-d466-4af7-85b8-abcee566a50d","displayName":"Mike Gowland","email":"admin-global@mgowlanddev.onmicrosoft.com","type":"User","tenantId":"f44173b3-932c-4c8f-93ce-6daf8457c0b0","userPrincipalName":"admin-global@mgowlanddev.onmicrosoft.com"},"allowCustomization":true,"createdOn":"2023-07-27T23:01:41.553Z","lastModifiedOn":"2023-07-27T23:01:41.553Z","connectionReferences":{},"databaseReferences":{}},{"appComponentName":"f75da8f7ece94165aa8bb440af25e6d7","displayName":"String Interpolator","appName":"abdfdff6-dba6-4d8e-9542-8e9793d2a855","appVersion":"2023-07-27T23:01:44Z","appComponentLibraryLogicalName":"cr0a0_sessioncomponentlibrary_ecd9d","appDisplayName":"Session Component Library","environmentName":"e4cbc6a6-6c14-4d80-a567-20caf1cc8ea0","owner":{"id":"f021e284-d466-4af7-85b8-abcee566a50d","displayName":"Mike Gowland","email":"admin-global@mgowlanddev.onmicrosoft.com","type":"User","tenantId":"f44173b3-932c-4c8f-93ce-6daf8457c0b0","userPrincipalName":"admin-global@mgowlanddev.onmicrosoft.com"},"allowCustomization":true,"createdOn":"2023-07-27T23:01:41.553Z","lastModifiedOn":"2023-07-27T23:01:41.553Z","connectionReferences":{},"databaseReferences":{}}]</AppComponents>
+  <AppComponentDependencies>[]</AppComponentDependencies>
+  <CanConsumeAppPass>1</CanConsumeAppPass>
+  <CanvasAppType>1</CanvasAppType>
+  <BypassConsent>0</BypassConsent>
+  <AdminControlBypassConsent>0</AdminControlBypassConsent>
+  <EmbeddedApp xsi:nil="true"></EmbeddedApp>
+  <IntroducedVersion>1.0</IntroducedVersion>
+  <CdsDependencies>{"cdsdependencies":[]}</CdsDependencies>
+  <IsCustomizable>1</IsCustomizable>
+  <BackgroundImageUri>/CanvasApps/cr0a0_sessioncomponentlibrary_ecd9d_BackgroundImageUri</BackgroundImageUri>
+  <DocumentUri>/CanvasApps/cr0a0_sessioncomponentlibrary_ecd9d_DocumentUri.msapp</DocumentUri>
+</CanvasApp>
